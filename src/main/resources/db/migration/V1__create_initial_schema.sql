@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS roles CASCADE;
 create table roles(
 	id BIGSERIAL primary key,
 	name varchar(50) not null unique
-)
+);
 
 -- =========================
 -- USERS
@@ -40,7 +40,7 @@ create table users(
 	CONSTRAINT fk_user_role
         FOREIGN KEY (role_id)
         REFERENCES roles(id)
-)
+);
 
 -- =========================
 -- ADDRESSES
@@ -60,7 +60,7 @@ CREATE TABLE addresses (
         FOREIGN KEY (user_id)
         REFERENCES users(id)
         ON DELETE CASCADE
-)
+);
 
 -- =========================
 -- CATEGORIES
@@ -71,7 +71,7 @@ CREATE TABLE categories (
     description TEXT,
     image TEXT,
     status VARCHAR(20) DEFAULT 'ACTIVE'
-)
+);
 
 -- =========================
 -- PRODUCTS
@@ -92,7 +92,7 @@ CREATE TABLE products (
     CONSTRAINT fk_product_category
         FOREIGN KEY (category_id)
         REFERENCES categories(id)
-)
+);
 
 -- =========================
 -- PRODUCT IMAGES
@@ -107,7 +107,7 @@ CREATE TABLE product_images (
         FOREIGN KEY (product_id)
         REFERENCES products(id)
         ON DELETE CASCADE
-)
+);
 
 -- =========================
 -- CARTS
@@ -121,7 +121,7 @@ CREATE TABLE carts (
         FOREIGN KEY (user_id)
         REFERENCES users(id)
         ON DELETE CASCADE
-)
+);
 
 -- =========================
 -- CART ITEMS
@@ -140,7 +140,7 @@ CREATE TABLE cart_items (
     CONSTRAINT fk_cart_item_product
         FOREIGN KEY (product_id)
         REFERENCES products(id)
-)
+);
 
 -- =========================
 -- ORDERS
@@ -163,7 +163,7 @@ CREATE TABLE orders (
     CONSTRAINT fk_order_address
         FOREIGN KEY (address_id)
         REFERENCES addresses(id)
-)
+);
 
 -- =========================
 -- ORDER ITEMS
@@ -184,7 +184,7 @@ CREATE TABLE order_items (
     CONSTRAINT fk_order_item_product
         FOREIGN KEY (product_id)
         REFERENCES products(id)
-)
+);
 
 -- =========================
 -- REVIEWS
@@ -208,12 +208,10 @@ CREATE TABLE reviews (
         ON DELETE CASCADE,
 
     CONSTRAINT uq_review UNIQUE(user_id, product_id)
-)
+);
 
 -- =========================
 -- INSERT DEFAULT ROLES
 -- =========================
 insert into roles(name)
 values('ADMIN'),('USER')
-
-

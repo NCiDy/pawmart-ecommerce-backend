@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  pawmart-postgres:
+    image: postgres:latest
+    container_name: PawMart-Postgres
+    restart: always
+    environment:
+      POSTGRES_USER: NCiDy
+      POSTGRES_PASSWORD: '123456'
+      POSTGRES_DB: PawMart_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
