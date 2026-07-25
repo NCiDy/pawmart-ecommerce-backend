@@ -19,11 +19,11 @@ public class JwtService {
     public String generateToken(String email) {
 
         return Jwts.builder()
-                .subject(email)
-                .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + 86400000))
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
+                .subject(email)                                                 // Nhét Email vào thẻ
+                .issuedAt(new Date())                                           // Ngày cấp thẻ
+                .expiration(new Date(System.currentTimeMillis() + 86400000))    // Ngày hết hạn (VD: sau 24h)
+                .signWith(key, SignatureAlgorithm.HS256)                        // ĐÓNG DẤU BẢO MẬT (Ký bằng Secret Key)
+                .compact();                                                     // Nén lại thành chuỗi JWT
     }
     public String extractEmail(String token) {
 
