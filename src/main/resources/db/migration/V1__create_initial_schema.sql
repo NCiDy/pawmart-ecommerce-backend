@@ -214,4 +214,9 @@ CREATE TABLE reviews (
 -- INSERT DEFAULT ROLES
 -- =========================
 insert into roles(name)
-values('ADMIN'),('USER')
+values('ADMIN'),('USER');
+
+INSERT INTO users (full_name, email, password, phone, role_id)
+VALUES 
+    ('System Admin', 'admin1@gmail.com', '$2a$10$XLfFdFnL7X8yzxOmDszExOqVhBzFylxs663u5KbbEd0TksDfJpChe', '0901111111', 1),
+    ('Admin',  'admin2@gmail.com', '$2a$10$4XbzNm4dIYzzrxh1wslkVOgCJ4TaeDo94.cfS1yUzvbGHRshVu/oW', '0902222222', 1);

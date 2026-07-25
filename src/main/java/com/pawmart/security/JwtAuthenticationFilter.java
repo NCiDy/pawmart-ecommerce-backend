@@ -35,9 +35,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         String token = authHeader.substring(7);
         String email = jwtService.extractEmail(token);
+        System.out.println("TOKEN EMAIL = " + email);
 
         Authentication currentAuth =
                 SecurityContextHolder.getContext().getAuthentication();
+        System.out.println("============CurrentAuth: " + currentAuth);
         if (email != null &&
                 (currentAuth == null || currentAuth instanceof AnonymousAuthenticationToken)) {
             UserDetails userDetails =
