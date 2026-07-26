@@ -1,5 +1,6 @@
 package com.pawmart.service.impl;
 
+import com.pawmart.DTO.Product.ProductImageResponse;
 import com.pawmart.DTO.Product.ProductRequest;
 import com.pawmart.DTO.Product.ProductResponse;
 import com.pawmart.entity.Category;
@@ -121,6 +122,21 @@ public class ProductServiceImpl implements ProductService {
 
         response.setCreatedAt(product.getCreatedAt());
         response.setUpdatedAt(product.getUpdatedAt());
+
+        response.setImages(
+                product.getImages()
+                        .stream()
+                        .map(image -> {
+                            ProductImageResponse imageResponse = new ProductImageResponse();
+
+                            imageResponse.setId(image.getId());
+                            imageResponse.setImageUrl(image.getImageUrl());
+                            imageResponse.setIsThumbnail(image.getIsThumbnail());
+
+                            return imageResponse;
+                        })
+                        .toList()
+        );
 
         return response;
     }

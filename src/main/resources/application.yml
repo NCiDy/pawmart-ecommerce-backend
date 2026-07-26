@@ -20,10 +20,21 @@ spring:
     enabled: true
     locations: classpath:db/migration
 
-  logging:
-    level:
-      org.flywaydb: DEBUG
-      org.postgresql: DEBUG
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+logging:
+  level:
+    org.flywaydb: DEBUG
+    org.postgresql: DEBUG
+
+cloudinary:
+  cloud-name: tlbzxewq
+  api-key: 832884887827513
+  api-secret: RsaOx0742CZWqlT6pVqhgiS8YOE
 
 server:
   port: 8080
