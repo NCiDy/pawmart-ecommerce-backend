@@ -34,16 +34,12 @@ public class ProductAdminController {
     }
 
     @PutMapping("/{id}")
-    public ProductResponse update(
-            @PathVariable Long id,
-            @Valid @RequestBody ProductRequest request) {
-
+    public ProductResponse update(@PathVariable Long id, @Valid @RequestBody ProductRequest request) {
         return productService.update(id, request);
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable Long id) {
-
         productService.delete(id);
         return "Delete product successfully";
     }

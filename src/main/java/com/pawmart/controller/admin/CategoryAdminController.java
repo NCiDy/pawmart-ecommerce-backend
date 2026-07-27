@@ -23,8 +23,7 @@ public class CategoryAdminController {
     }
 
     @PutMapping("/{id}")
-    public CategoryResponse update(@PathVariable Long id,
-                                   @Valid @RequestBody CategoryRequest request) {
+    public CategoryResponse update(@PathVariable Long id, @Valid @RequestBody CategoryRequest request) {
         return categoryService.update(id, request);
     }
 

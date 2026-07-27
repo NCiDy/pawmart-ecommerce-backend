@@ -62,6 +62,12 @@ public class Product {
     )
     private List<CartItem> cartItems = new ArrayList<>();
 
+    @OneToMany(
+            mappedBy = "product",
+            cascade = CascadeType.ALL
+    )
+    private List<OrderItem> orderItems = new ArrayList<>();
+
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
