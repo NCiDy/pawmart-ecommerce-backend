@@ -5,6 +5,7 @@ import com.pawmart.DTO.Order.UpdateOrderStatusRequest;
 import com.pawmart.DTO.Order.UpdatePaymentStatusRequest;
 import com.pawmart.enums.OrderStatus;
 import com.pawmart.service.OrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/admin/orders")
 @RequiredArgsConstructor
 @PreAuthorize("hasRole('ADMIN')")
+@Tag(name = "Admin - Order")
 public class OrderAdminController {
     private final OrderService orderService;
 

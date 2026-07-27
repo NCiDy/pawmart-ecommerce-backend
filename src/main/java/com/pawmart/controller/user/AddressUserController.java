@@ -6,6 +6,7 @@ import com.pawmart.exception.AppException;
 import com.pawmart.repository.UserRepository;
 import com.pawmart.security.JwtService;
 import com.pawmart.service.AddressService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user/address")
 @RequiredArgsConstructor
+@Tag(name = "User - Address")
 public class AddressUserController {
     private final AddressService addressService;
     private final JwtService jwtService;

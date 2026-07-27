@@ -6,6 +6,7 @@ import com.pawmart.exception.AppException;
 import com.pawmart.repository.UserRepository;
 import com.pawmart.security.JwtService;
 import com.pawmart.service.OrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -20,6 +21,7 @@ import java.util.List;
 @RequestMapping("/api/user/orders")
 @RequiredArgsConstructor
 @PreAuthorize("hasAnyRole('USER','ADMIN')")
+@Tag(name = "User - Order")
 public class OrderUserController {
     private final OrderService orderService;
     private final JwtService jwtService;

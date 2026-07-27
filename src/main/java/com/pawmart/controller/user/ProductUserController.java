@@ -3,6 +3,7 @@ package com.pawmart.controller.user;
 
 import com.pawmart.DTO.Product.ProductResponse;
 import com.pawmart.service.ProductService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/user/products")
 @RequiredArgsConstructor
+@Tag(name = "User - Product")
 public class ProductUserController {
     private final ProductService productService;
 

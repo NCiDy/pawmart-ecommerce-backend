@@ -4,6 +4,7 @@ package com.pawmart.controller.admin;
 import com.pawmart.DTO.Product.ProductRequest;
 import com.pawmart.DTO.Product.ProductResponse;
 import com.pawmart.service.ProductService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,6 +16,7 @@ import java.util.List;
 @RequestMapping("/api/admin/products")
 @RequiredArgsConstructor
 @PreAuthorize("hasRole('ADMIN')")
+@Tag(name = "Admin - Product")
 public class ProductAdminController {
     private final ProductService productService;
 

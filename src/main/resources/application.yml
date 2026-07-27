@@ -26,6 +26,15 @@ spring:
       max-file-size: 10MB
       max-request-size: 10MB
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+
+  api-docs:
+    path: /v3/api-docs
+
 logging:
   level:
     org.flywaydb: DEBUG

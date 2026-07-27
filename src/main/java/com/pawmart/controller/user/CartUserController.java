@@ -7,6 +7,7 @@ import com.pawmart.exception.AppException;
 import com.pawmart.repository.UserRepository;
 import com.pawmart.security.JwtService;
 import com.pawmart.service.CartService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/user/cart")
 @RequiredArgsConstructor
 @PreAuthorize("hasAnyRole('USER','ADMIN')")
+@Tag(name = "User - Cart")
 public class CartUserController {
     private final CartService cartService;
     private final JwtService jwtService;
