@@ -1,7 +1,6 @@
 package com.pawmart.controller;
 
 import com.pawmart.DTO.auth.*;
-import com.pawmart.entity.User;
 import com.pawmart.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

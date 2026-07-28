@@ -2,20 +2,15 @@ package com.pawmart.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
-import java.nio.file.AccessDeniedException;
-import java.util.HashMap;
-import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // 1. Lỗi nghiệp vụ do bạn TỰ NÉM (Dùng AppException để tùy chọn 400, 401, 404, 409...)
+    // 1. Lỗi nghiệp (Dùng AppException để tùy chọn 400, 401, 404, 409...)
     @ExceptionHandler(AppException.class)
     public ResponseEntity<String> handleAppException(AppException ex) {
         return ResponseEntity.status(ex.getStatus()).body(ex.getMessage());

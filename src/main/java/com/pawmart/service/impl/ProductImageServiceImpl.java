@@ -6,7 +6,6 @@ import com.pawmart.exception.AppException;
 import com.pawmart.repository.ProductImageRepository;
 import com.pawmart.repository.ProductRepository;
 import com.pawmart.service.ProductImageService;
-import com.pawmart.service.ProductService;
 import com.pawmart.service.UploadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
